@@ -21,7 +21,7 @@ app.use(express.static("public"));
 
 var databaseUrl = "news";
 mongoose.Promise = Promise;
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/" + databaseUrl;
 mongoose.connect(MONGODB_URI);
 
 app.engine("handlebars", exphbs({
